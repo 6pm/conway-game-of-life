@@ -1,0 +1,170 @@
+.gameOfLife {
+	margin: 20px;
+	width: auto;
+}
+
+/* Canvas */
+.gol-canvas-wrap {
+	clear: both;
+	height: 70vh;
+	overflow: auto;
+}
+.gol-canvas-wrap canvas {
+	background: #041204;
+	cursor: crosshair;
+}
+.gol-playing canvas {
+	cursor: not-allowed;
+}
+
+/* Navigation */
+.gol-navigation {
+	float: left;
+	margin-bottom: 10px;
+	cursor: pointer;
+}
+
+.gol-start-btn, .gol-pause-btn, .gol-stop-btn {
+	float: left;
+	width: 25px;
+	height: 25px;
+	position: relative;
+	overflow: hidden;
+	margin-right: 10px;
+	border: 1px solid #505d50;
+	border-radius: 3px;
+	transition: all 0.3s;
+}
+.gol-start-btn, .gol-pause-btn, .gol-stop-btn:hover {
+	border-color: #000;
+}
+/* start icon*/
+.gol-start-btn:before {
+	content: '';
+	position: absolute;
+	top: 3px;
+	left: 6px;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 10px 0 10px 13px;
+	border-color: transparent transparent transparent #505d50;
+	transition: all 0.3s;
+}
+.gol-start-btn:hover:before {
+	border-color: transparent transparent transparent #000;
+}
+
+/* pause icon */
+.gol-pause-btn:before, .gol-pause-btn:after {
+	content: '';
+	position: absolute;
+	top: 4px;
+	width: 4px;
+	height: 18px;
+	background: #505d50;
+	transition: all 0.3s;
+}
+.gol-pause-btn:before {
+	left: 6px;
+}
+.gol-pause-btn:after {
+	right: 6px;
+}
+.gol-pause-btn:hover:before, .gol-pause-btn:hover:after {
+	background-color: #000;
+}
+
+/* stop icon */
+.gol-stop-btn:before {
+	content: '';
+	position: absolute;
+	top: 4px;
+	right: 4px;
+	width: 17px;
+	height: 17px;
+	border-radius: 2px;
+	background: #505d50;
+	transition: all 0.3s;
+}
+.gol-stop-btn:hover:before {
+	background: #000;
+}
+
+/* time select */
+.gol-range {
+	margin-right: 15px;
+	line-height: 27px;
+	float: left;
+}
+.gol-range span {
+	line-height: 27px;
+	float: left;
+	margin-right: 5px;
+}
+.gol-range input {
+	width: 100px;
+	height: 27px;
+}
+
+/* Legend */
+.gol-legend {
+	float: right;
+	line-height: 27px;
+}
+.gol-legend-generation {
+	float: left;
+	margin: 0 4px;
+}
+
+/* History buttons */
+.gol-prev-step, .gol-next-step {
+	width: 18px;
+	height: 27px;
+	position: relative;
+	float: left;
+	cursor: pointer;
+}
+.gol-prev-step:before, .gol-next-step:before {
+	content: '';
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	transform: rotate(45deg);
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: auto;
+}
+
+/* Snapshots */
+.gol-history-items {
+	display: inline-block;
+}
+.gol-snapshot {
+	color: blue;
+	cursor: pointer;
+}
+.gol-snapshot:after {
+	content: ',';
+	padding-right: 5px;
+}
+.gol-snapshot:last-child:after {
+	content: '.';
+}
+
+.gol-prev-step:before {
+	border-left: 2px solid #041204;
+	border-bottom: 2px solid #041204;
+}
+.gol-next-step:before {
+	border-right: 2px solid #041204;
+	border-top: 2px solid #041204;
+}
+
+.gol-save-history {
+	line-height: 25px;
+	padding: 0 10px;
+	cursor: pointer;
+}
